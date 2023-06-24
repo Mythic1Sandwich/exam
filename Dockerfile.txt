@@ -9,7 +9,7 @@ RUN apt-get update
 RUN apt-get install qtbase5-dev qtchooser qt5-qmake qtbase5-dev-tools -y gcc
 RUN apt-get install build-essential -y gcc
 
-WORKDIR /MyProj-221_3210_Abdulaeva/
+WORKDIR /MyProj_221_3210_Abdulaeva/
 COPY *.cpp /MyProj_221_3210_Abdulaeva
 COPY *.h /MyProj_221_3210_Abdulaeva
 COPY *.pro /MyProj_221_210_Abdulaeva
