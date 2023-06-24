@@ -1,0 +1,20 @@
+FROM ubuntu
+
+LABEL author="AbdulaevaKamila"
+
+ENV TZ=Europe/Moscow
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+
+RUN apt-get update
+RUN apt-get install qtbase5-dev qtchooser qt5-qmake qtbase5-dev-tools -y gcc
+RUN apt-get install build-essential -y gcc
+
+WORKDIR /MyProj-221-3210_Abdulaeva/
+COPY *.cpp /MyProj-221-3210_Abdulaeva
+COPY *.h /MyProj-221-3210_Abdulaeva
+COPY *.pro /MyProj-221-3210_Abdulaeva
+
+RUN qmake program1.pro
+RUN make
+
+ENTRYPOINT ["./program1"]
